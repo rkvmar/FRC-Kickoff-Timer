@@ -16,6 +16,7 @@ function updateCounter() {
         container.innerHTML = `${days}:${hours}:${minutes}:${seconds}:${milliseconds}`;
     } else {
         container.innerHTML = "Its Kickoff Time!";
+        doConfetti();
     }
 }
 setInterval(updateCounter, 1);
