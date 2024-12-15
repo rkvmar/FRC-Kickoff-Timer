@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
-
+const header = document.querySelector(".header");
 const time = new Date();
 
 function updateCounter() {
@@ -15,22 +15,25 @@ function updateCounter() {
         const milliseconds = Math.floor((timeDifference % 1000) / 1).toString().padStart(3, '0');
         container.innerHTML = `${days}:${hours}:${minutes}:${seconds}:${milliseconds}`;
     } else {
+        header.style.display = "none";
         container.innerHTML = "Its Kickoff Time!";
+        container.style.fontSize = "8vw";
         doConfetti();
+        clearInterval(interval);
     }
 }
-setInterval(updateCounter, 1);
+const interval = setInterval(updateCounter, 1);
 updateCounter();
 function doConfetti() {
     confetti({
-        particleCount: 200,
+        particleCount: 500,
         angle: 60,
         spread: 55,
         origin: { x: 0 },
       });
     
       confetti({
-        particleCount: 200,
+        particleCount: 500,
         angle: 120,
         spread: 55,
         origin: { x: 1 },
