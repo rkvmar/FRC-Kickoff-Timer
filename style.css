@@ -16,8 +16,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 10rem;
+    font-family: 'Fira Code', monospace; /* Example of a common monospace font */
+    font-size: 10vw
 }
 
 h1 {
