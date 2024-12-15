@@ -12,7 +12,7 @@ function updateCounter() {
         const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-        const milliseconds = Math.floor((timeDifference % 1000) / 1);
+        const milliseconds = Math.floor((timeDifference % 1000) / 1).toString().padStart(3, '0');
         container.innerHTML = `${days}:${hours}:${minutes}:${seconds}:${milliseconds}`;
     } else {
         container.innerHTML = "Countdown has ended!";
