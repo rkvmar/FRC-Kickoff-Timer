@@ -15,8 +15,23 @@ function updateCounter() {
         const milliseconds = Math.floor((timeDifference % 1000) / 1).toString().padStart(3, '0');
         container.innerHTML = `${days}:${hours}:${minutes}:${seconds}:${milliseconds}`;
     } else {
-        container.innerHTML = "Countdown has ended!";
+        container.innerHTML = "Its Kickoff Time!";
     }
 }
 setInterval(updateCounter, 1);
 updateCounter();
+function doConfetti() {
+    confetti({
+        particleCount: 200,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+      });
+    
+      confetti({
+        particleCount: 200,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+      });
+}
